@@ -272,3 +272,106 @@ int main()
 
     return 0;
 }
+
+
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+   double kg, price, regularclotheskg, heavyclotheskg, whiteskg, babyclotheskg, mixedclotheskg, beddingsandlinenskg, queencomforterkg, singledoublecomforterkg, curtainskg;
+   int choice;
+
+
+
+
+   cout << "Welcome to JAKOB'S WELL LAUNDRY SERVICES!" << endl;
+   cout << "Here are the menus:" << endl << endl;
+
+   cout << "1. Regular Clothes" << endl;
+   cout << "- T-shirts, Shorts, Dresses, and etc." << endl;
+
+   cout << "2. Heavy Clothes" << endl;
+   cout << "- Pants, Jackets, Sweaters, and etc." << endl;
+
+   cout << "3. Whites" << endl;
+
+   cout << "4. Baby Clothes" << endl;
+
+   cout << "5. Mixed Clothes" << endl;
+
+   cout << "6. Beddings and Linens" << endl;
+
+   cout << "7. Queen Comforter" << endl;
+
+   cout << "8. Single/Double Comforter" << endl;
+
+   cout << "9. Curtains" << endl;
+   cout << "Please select your choice: ";
+   cin >> choice;
+
+
+   if (choice == 1) {
+   cout << "price per kilo:" << endl;
+   cout << "1kg - 30 pesos" << "2kg - 60 pesos" << endl; // di pa siya final na price
+   cout << "3 kg - 80 pesos" << "4kg - 110 pesos" << endl;
+   cout << "Enter kg: ";
+   cin >> regularclotheskg;
+   }
+   if (kg <= 1) {
+   cout << "price" << endl; // price per kilo
+   }
+
+   else if (choice == 2) {
+   cout << "Enter kg: " << endl;
+   cin >> heavyclotheskg;
+   }
+
+      else if (choice == 3) {
+   cout << "Enter kg: " << endl;
+   cin >> whiteskg;
+   }
+
+    else if (choice == 4) {
+   cout << "Enter kg: " << endl;
+   cin >> babyclotheskg;
+   }
+
+   else if (choice == 5) {
+   cout << "Enter kg: " << endl;
+   cin >> mixedclotheskg;
+   }
+
+   else if (choice == 6) {
+   cout << "Enter the kg: " << endl;
+   cin >> beddingsandlinenskg;
+   }
+
+    else if (choice == 7) {
+   cout << "Enter kg: " << endl;
+   cin >> queencomforterkg;
+   }
+
+    else if (choice == 8) {
+   cout << "Enter kg: " << endl;
+   cin >> singledoublecomforterkg;
+   }
+
+     else if (choice == 9) {
+   cout << "Enter kg: " << endl;
+   cin >> curtainskg;
+   }
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+
