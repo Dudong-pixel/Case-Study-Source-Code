@@ -276,102 +276,490 @@ int main()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-   double kg, price, regularclotheskg, heavyclotheskg, whiteskg, babyclotheskg, mixedclotheskg, beddingsandlinenskg, queencomforterkg, singledoublecomforterkg, curtainskg;
-   int choice;
+char addons;
+int totaladdonsprice, quantity, price;
+int totalstuffedtoy, toyprice;
+char stuffedtoy;
+char powders, Downypowder_variant, Surfpowder_variant, Tidepowder_variant, Championpowder_variant, Bleach_variant;
+int Quantity, totalPrice, downypowderprice, Surfpowderprice, Tidepowderprice, Championpowderprice, Bleachprice;
+char fabcon, downyfabcon_variant, surffabcon_variant, championfabcon_variant;
+int downyfabconprice, surffabconprice, championfabconprice;
 
 
 
+    cout << "Stuffed Toy (per piece)" << endl;
+    cout << "1. Small - 50       2. Medium - 100" << endl;
+    cout << "3. Large - 150      4. Extra Large - 250" << endl;
+    cout << "Choose: ";
+    cin >> stuffedtoy;
 
-   cout << "Welcome to JAKOB'S WELL LAUNDRY SERVICES!" << endl;
-   cout << "Here are the menus:" << endl << endl;
-
-   cout << "1. Regular Clothes" << endl;
-   cout << "- T-shirts, Shorts, Dresses, and etc." << endl;
-
-   cout << "2. Heavy Clothes" << endl;
-   cout << "- Pants, Jackets, Sweaters, and etc." << endl;
-
-   cout << "3. Whites" << endl;
-
-   cout << "4. Baby Clothes" << endl;
-
-   cout << "5. Mixed Clothes" << endl;
-
-   cout << "6. Beddings and Linens" << endl;
-
-   cout << "7. Queen Comforter" << endl;
-
-   cout << "8. Single/Double Comforter" << endl;
-
-   cout << "9. Curtains" << endl;
-   cout << "Please select your choice: ";
-   cin >> choice;
-
-
-   if (choice == 1) {
-   cout << "price per kilo:" << endl;
-   cout << "1kg - 30 pesos" << "2kg - 60 pesos" << endl; // di pa siya final na price
-   cout << "3 kg - 80 pesos" << "4kg - 110 pesos" << endl;
-   cout << "Enter kg: ";
-   cin >> regularclotheskg;
-   }
-   if (kg <= 1) {
-   cout << "price" << endl; // price per kilo
-   }
-
-   else if (choice == 2) {
-   cout << "Enter kg: " << endl;
-   cin >> heavyclotheskg;
-   }
-
-      else if (choice == 3) {
-   cout << "Enter kg: " << endl;
-   cin >> whiteskg;
-   }
-
-    else if (choice == 4) {
-   cout << "Enter kg: " << endl;
-   cin >> babyclotheskg;
-   }
-
-   else if (choice == 5) {
-   cout << "Enter kg: " << endl;
-   cin >> mixedclotheskg;
-   }
-
-   else if (choice == 6) {
-   cout << "Enter the kg: " << endl;
-   cin >> beddingsandlinenskg;
-   }
-
-    else if (choice == 7) {
-   cout << "Enter kg: " << endl;
-   cin >> queencomforterkg;
-   }
-
-    else if (choice == 8) {
-   cout << "Enter kg: " << endl;
-   cin >> singledoublecomforterkg;
-   }
-
-     else if (choice == 9) {
-   cout << "Enter kg: " << endl;
-   cin >> curtainskg;
-   }
-
-
-
-
-
-
-
-
-
+    if (stuffedtoy == '1') {
+    toyprice = 50;
+    }
+    else if (stuffedtoy == '2') {
+    toyprice = 100;
+    }
+    else if (stuffedtoy == '3') {
+    toyprice = 150;
+    }
+    else if (stuffedtoy == '4') {
+    toyprice = 250;
+    }
+    else {
+    cout << "Invalid input" << endl;
     return 0;
+    }
+
+
+
+    cout << "Quantity: ";
+    cin >> quantity;
+
+    totalstuffedtoy = toyprice * quantity;
+
+    cout << "Your total amount is: " << totalstuffedtoy << endl << endl << endl;
+
+
+    cout << " ADD ONS" << endl;
+    cout << "A. Banlaw - 50    B. Extra Wash - 80" << endl;
+    cout << "C. Detergent (per sachet)   D. Fabcon (per sachet)" << endl;
+    cout << "                 E. Zonrox/Color Safe" << endl;
+    cout << "Select add-ons: ";
+    cin >> addons;
+
+    if (addons == 'A' || addons == 'a'){
+    price = 50;
+    }
+
+    else if (addons == 'B' || addons == 'b') {
+    price = 80;
+    }
+    else if (addons == 'C' || addons == 'c') {
+    cout << "A. Downy      " << endl;
+    cout << "B. Surf       " << endl;
+    cout << "C. Tide       " << endl;
+    cout << "D. champion   " << endl;
+    cout << "choose powder: ";
+    cin >> powders;
+
+    if (powders == 'A' || powders == 'a')
+    {
+    cout << "========================================" << endl;
+    cout << "        Downey Variants (powder)             " << endl;
+    cout << "========================================" << endl;
+    cout << "1. Lavender       = "; cout << "15  - pesos" << endl;
+    cout << "2. Fresh Protect = "; cout << "15  - pesos" << endl;
+    cout << "3. Downy Rose = "; cout << "15 - pesos" << endl;
+    cout << "4. Matic   "; cout << "15 - pesos" << endl;
+    cout << "========================================" << endl;
+    cout << "Select powder variant:" << endl;
+    cin >> Downypowder_variant;
+    if (Downypowder_variant == '1')
+        downypowderprice = 15;
+
+    else if (Downypowder_variant == '2')
+        downypowderprice = 15;
+
+    else if (Downypowder_variant == '3')
+        downypowderprice = 15;
+
+    else if (Downypowder_variant == '4')
+        downypowderprice = 15;
+
+    else {
+    cout << " Invalid Input!";
+    return 0;
+        }
+    totalPrice += Downypowder_variant;
+
+    double pay;
+    cout << " total price: " << downypowderprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= downypowderprice){
+    double change = pay - downypowderprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = downypowderprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+    }
+    }
+
+    if (powders == 'B' || powders == 'b')
+    {
+    cout << "========================================" << endl;
+    cout << "        Surf Variants (powder)             " << endl;
+    cout << "========================================" << endl;
+    cout << "1. Antibacterial      = "; cout << "15  - pesos" << endl;
+    cout << "2. Sun Fresh      = "; cout << "15  - pesos" << endl;
+    cout << "3. Cherry Blossom = "; cout << "15 - pesos" << endl;
+    cout << "4. Lavender Fresh  = "; cout << "15  - pesos" << endl;
+    cout << "========================================" << endl;
+    cout << "Select variant: " << endl;
+    cin >> Surfpowder_variant;
+
+    if (Surfpowder_variant == '1')
+        Surfpowderprice = 15;
+
+    else if (Surfpowder_variant == '2')
+        Surfpowderprice = 15;
+
+    else if (Surfpowder_variant == '3')
+        Surfpowderprice = 15;
+
+    else if (Surfpowder_variant == '4')
+        Surfpowderprice = 15;
+
+    else {
+    cout << " Invalid Input!";
+    return 0;
+        }
+    totalPrice += Surfpowder_variant;
+
+    double pay;
+    cout << " total price: " << Surfpowderprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= Surfpowderprice){
+    double change = pay - Surfpowderprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = Surfpowderprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+    }
+
+
+    if (powders == 'C' || powders == 'c')
+    {
+        cout << "========================================" << endl;
+        cout << "         Tide Variants (powder)                 " << endl;
+        cout << "========================================" << endl;
+        cout << "1. Original Scent    = "; cout << "15  - pesos" << endl;
+        cout << "2. Lemon           = "; cout << "15 - pesos" << endl;
+        cout << "3. Ultra Plus = "; cout << "15  - pesos" << endl;
+        cout << "4. Antibac    = "; cout << "15 - pesos" << endl;
+        cout << "========================================" << endl;
+           cout << "Select variant:" << endl;
+           cin >> Tidepowder_variant;
+    if (Tidepowder_variant == '1')
+        Tidepowderprice = 15;
+
+        else if (Tidepowder_variant == '2')
+        Tidepowderprice = 15;
+
+        else if (Tidepowder_variant == '3')
+        Tidepowderprice = 15;
+
+        else if (Tidepowder_variant == '4')
+        Tidepowderprice = 15;
+
+        else {
+        cout << " Invalid Input!";
+        return 0;
+        }
+    totalPrice += Tidepowder_variant;
+
+    double pay;
+    cout << " total price: " << Tidepowderprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= Tidepowderprice){
+    double change = pay - Tidepowderprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = Tidepowderprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+    }
+
+
+    if (powders == 'D' || powders == 'd')
+    {
+        cout << "========================================" << endl;
+        cout << "      Champion Variants (powder)                " << endl;
+        cout << "========================================" << endl;
+        cout << "1. Blue     = "; cout << "15  - pesos" << endl;
+        cout << "2. Citrus Fresh         = "; cout << "15 - pesos" << endl;
+        cout << "3. Anti-bacterial      = "; cout << "15  - pesos" << endl;
+        cout << "4. Premium Color Care            = "; cout << "15 - pesos" << endl;
+        cout << "========================================" << endl;
+           cout << "Select variant:" << endl;
+           cin >> Championpowder_variant;
+
+
+        if (Championpowder_variant == '1')
+        Championpowderprice = 15;
+
+        else if (Championpowder_variant == '2')
+        Championpowderprice = 15;
+
+        else if (Championpowder_variant == '3')
+        Championpowderprice = 15;
+
+        else if (Championpowder_variant == '4')
+        Championpowderprice = 15;
+
+        else {
+        cout << " Invalid Input!";
+        return 0;
+        }
+    totalPrice += Championpowder_variant;
+
+    double pay;
+    cout << " total price: " << Championpowderprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= Championpowderprice){
+    double change = pay - Championpowderprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = Championpowderprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+    }
+
+
+
+    if (addons == 'D' || addons == 'd'){
+    cout << "Fabcon" << endl;
+    cout << "A. Downy" << endl;
+    cout << "B. Surf" << endl;
+    cout << "C. Tide" << endl;
+    cout << "D. Champion" << endl;
+    cout << "Select Fabcon: ";
+    cin >> fabcon;
+
+    }else {
+    cout << "Invalid input" << endl;
+    }
+
+
+
+
+    if (fabcon == 'A' || fabcon == 'a'){
+    cout << "Downy Variants (fabcon)" << endl;
+    cout << "1. Sunrise Fresh - 10" << endl;
+    cout << "2. Garden Bloom - 10" << endl;
+    cout << "3. Antibac - 10" << endl;
+    cout << "4. Passion - 10" << endl;
+    cout << "Select Variants: ";
+    cin >> downyfabcon_variant;
+
+    if (downyfabcon_variant == '1' || '2' || '3' || '4')
+    downyfabconprice = 10;
+
+    else {
+    cout << "Invalid input" << endl;
+    return 0;
+    }
+    }
+
+
+
+
+    totalPrice += downyfabcon_variant;
+
+    double pay;
+    cout << " total price: " << downyfabconprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= downyfabconprice){
+    double change = pay - downyfabconprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = downyfabconprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+
+
+
+    if (fabcon == 'B' || fabcon == 'b'){
+    cout << "Surf Variants (fabcon)" << endl;
+    cout << "1. Sun Fresh - 10" << endl;
+    cout << "2. Cherry Blosom - 10" << endl;
+    cout << "3. Antibac - 10" << endl;
+    cout << "4. Daisy Fresh - 10" << endl;
+    cout << "Select Variant: ";
+    cin >> surffabcon_variant;
+
+    if (surffabcon_variant == '1' || '2' || '3' || '4')
+    surffabconprice = 10;
+
+    else {
+    cout << "Invalid Input" << endl;
+    return 0;
+    }
+
+
+    totalPrice += surffabcon_variant;
+
+    double pay;
+    cout << " total price: " << surffabconprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= surffabconprice){
+    double change = pay - surffabconprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = surffabconprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+    }
+
+
+
+
+
+    /*else if (fabcon == 'C' || fabcon == 'c'){
+    cout << "Downy Variants (fabcon)" << endl;
+    cout << "1. Sunrise Fresh - 10" << endl;
+    cout << "2. Garden Bloom - 10" << endl;
+    cout << "3. Antibac" << endl;
+    cout << "4. Passion" << endl;
+    cout << "Select Variants: ";
+    cin >> downyfabcon;
+    }*/
+    if (fabcon == 'D' || fabcon == 'd'){
+    cout << "Champion Variants (fabcon)" << endl;
+    cout << "1. Simply Fresh - 10" << endl;
+    cout << "2. Sweet Floral - 10" << endl;
+    cout << "3. Aqua Fresh - 10" << endl;
+    cout << "4. Antibac - 10" << endl;
+    cout << "Select Variants: ";
+    cin >> championfabcon_variant;
+
+    if (championfabcon_variant == '1' || '2' || '3' || '4')
+    championfabconprice = 10;
+
+    else {
+    cout << "Invalid input" << endl;
+    return 0;
+    }
+
+
+    totalPrice += championfabcon_variant;
+
+    double pay;
+    cout << " total price: " << championfabconprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= championfabconprice){
+    double change = pay - championfabconprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = championfabconprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+    }
+
+
+
+    if (addons == 'E' || addons == 'e') {
+    cout << "========================================" << endl;
+    cout << "                  Bleach                 " << endl;
+    cout << "========================================" << endl;
+    cout << "1. Zonrox              = "; cout << "10  - pesos" << endl;
+    cout << "2. Zonrox ColorSafe    = "; cout << "10  - pesos" << endl;
+    cout << "3. Zonrox FloralBlast  = "; cout << "10  - pesos" << endl;
+    cout << "========================================" << endl;
+    cout << "Select variant:" << endl;
+    cin >> Bleach_variant;
+
+
+
+
+    if (Bleach_variant == '1')
+        Bleachprice = 10;
+
+    else if (Bleach_variant == '2')
+        Bleachprice = 10;
+
+    else if (Bleach_variant == '3')
+        Bleachprice = 10;
+
+    else {
+    cout << " Invalid Input";
+    return 0;
+        }
+
+    totalPrice += Bleachprice;
+
+    double pay;
+    cout << " total price: " << Bleachprice << endl;
+    cout << " Enter the amount you want to pay: ";
+    cin >> pay;
+
+    if (pay >= Bleachprice){
+    double change = pay - Bleachprice;
+        cout << " Payment successful " << endl;
+        cout << " your change is: " << change << endl;
+    }
+    else {
+    double not_enough = Bleachprice - pay;
+        cout << " Insufficient funds - " << not_enough << endl;
+    }
+    }
+
+
+
+
+    /*cout << "Quantity: ";
+    cin >> quantity;
+
+    totaladdonsprice = price * quantity;
+    cout << "Your total amount is: " << totaladdonsprice << endl;*/
+
+
+
+
+
+
+return 0;
+
 }
+
+
+
+
+
 
