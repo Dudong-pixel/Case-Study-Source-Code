@@ -8,20 +8,22 @@ double format2(double value) {
 int main()
 {
 
-
-    int Choice, stuffSize, pc, stuffPrice, choice, totalstuffsize;
-    char mainOpt, laundryType, powderOpt, fabconOpt, option, addons;
-    double laundryPrice = 0, powderPrice = 0, fabconPrice = 0, totalPrice = 0;
-    double kg, pay, change, multiplier;
-    int hours = 0;
+    string name;
+    int Choice, stuffSize, pcs, stuffPrice, choice, totalstuffPize;
+    char mainOpt, laundryType, powderOpt, fabconOpt, option;
+    double laundryPrice = 0, powderPrice, fabconPrice, totalPrice;
+    double kg, pay, change, multiplier, total;
+    int hours, num, addons;
     char powders, Downypowder_variant, Surfpowder_variant, Tidepowder_variant, Championpowder_variant;
     char fabcon, downyfabcon_variant, surffabcon_variant, championfabcon_variant, Bleach_variant;
     int downyfabconprice, surffabconprice, championfabconprice;
-    double downypowderprice, Surfpowderprice, Tidepowderprice, Championpowderprice, Bleachprice;
+    double downypowderprice = 0, Surfpowderprice = 0, Tidepowderprice = 0, Championpowderprice = 0, Bleachprice = 0;
+
+
 
 
     cout << "=========================================" << endl;
-    cout << "      JAKOB'S WELL LAUNDRY SERVICES"       << endl;
+    cout << "      JACOB'S WELL LAUNDRY SERVICES"       << endl;
     cout << "=========================================" << endl;
     cout << "       A. Add Laundry Request"             << endl;
     cout << "       B. Exit"                            << endl;
@@ -33,8 +35,8 @@ int main()
     if (option == 'A' || option == 'a')
     {
     cout << "================ LAUNDRY TYPE ================" << endl;
-    cout << "                   A. Regular" << endl;
-    cout << "                   B. Premium" << endl;
+    cout << "                 A. Regular" << endl;
+    cout << "                 B. Premium" << endl;
     cout << "==============================================\n";
     cout << "Choose: ";
     cin >> laundryType;
@@ -42,7 +44,7 @@ int main()
 
     else if (option == 'B' || option == 'b')
     {
-        cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
+        cout << "Thank you for using JACOB'S WELL Laundry Services!" << endl;
         return 0;
     }
 
@@ -52,25 +54,30 @@ int main()
         return 0;
     }
 
+    if (laundryType == 'A' || laundryType == 'a')
+        hours = 3;
+
+    else if (laundryType == 'B' || laundryType == 'b')
+        hours = 2;
+
+
      if (laundryType == 'A' || laundryType == 'a')
     {
         cout << "---------------------------------------------------" << endl;
         cout << "                       REGULAR"                      << endl;
         cout << "---------------------------------------------------" << endl;
-        cout << "1. Regular Clothes         - 17.5/kg        MAX.8kg" << endl;
-        cout << "2. Heavy Clothes           - 23.3/kg        MAX.6kg" << endl;
-        cout << "3. Whites                  - 25/kg          MAX.6kg" << endl;
-        cout << "4. Baby Clothes            - 25/kg          MAX.6kg" << endl;
-        cout << "5. Mixed Clothes           - 21.4/kg        MAX.7kg" << endl;
-        cout << "6. Beddings and Linens     - 25/kg          MAX.6kg" << endl;
-        cout << "7. Queen Comforter         - 250     (1pc per load)" << endl;
-        cout << "8. Single/Double Comforter - 150/pc  (2pc per load)" << endl;
-        cout << "9. Curtains                - 40/kg          MAX.5kg" << endl;
-        cout << "10.Stuffed Toy             -              (per pc.)" << endl;
+        cout << "1. Regular Clothes         -                MAX.8kg" << endl;
+        cout << "2. Heavy Clothes           -                MAX.6kg" << endl;
+        cout << "3. Whites                  -                MAX.6kg" << endl;
+        cout << "4. Baby Clothes            -                MAX.6kg" << endl;
+        cout << "5. Mixed Clothes           -                MAX.7kg" << endl;
+        cout << "6. Beddings and Linens     -                MAX.6kg" << endl;
+        cout << "7. Queen Comforter         -         (1pc per load)" << endl;
+        cout << "8. Single/Double Comforter -         (2pc per load)" << endl;
+        cout << "9. Curtains                -                MAX.5kg" << endl;
         cout << "---------------------------------------------------" << endl;
         cout << "Please Choose What Kind of Clothes you would Wash: ";
         cin >> Choice;
-        {
 
 
         if (Choice < 1 || Choice > 10)
@@ -79,82 +86,34 @@ int main()
             return 0;
         }
         if (Choice == 7) laundryPrice = 250;
+
         else if (Choice == 8) laundryPrice = 150;
-        else if (Choice == 10)
+
+        else
         {
-            cout << "============= Size =============" << endl;
-            cout << "             Per pc"              << endl;
-            cout << "1. Small = 50  | 2. Medium = 100" << endl;
-            cout << "3. Large = 150 | 4. XL     = 250" << endl;
-            cout << "================================" << endl;
-            cout << "What size: ";
-            cin >> stuffSize;
-
-            if (stuffSize == 1)
-            stuffPrice = 50;
-
-            else if (stuffPrice == 2)
-            stuffPrice = 100;
-
-            else if (stuffPrice == 3)
-            stuffPrice = 150;
-
-            else if (stuffPrice == 4)
-            stuffPrice = 250;
-
-
-            if (stuffSize == 1)
-            {
-                cout << "Quantity: ";
-                cin >> pc;
-            }
-
-            else if (stuffSize == 2)
-            {
-                cout << "Quantity: ";
-                cin >> pc;
-            }
-
-            else if (stuffSize == 3)
-            {
-                cout << "Quantity: ";
-                cin >> pc;
-            }
-
-            else if (stuffSize == 4)
-            {
-                cout << "Quantity: ";
-                cin >> pc;
-            }
-            else
-            {
-                cout << "It's not in the option." << endl;
-                return 0;
-            }
-        }
-        else {
             cout << "Enter kg: ";
             cin >> kg;
-            }
-
-
-        multiplier = kg * 20;
-
+        }
 
 
             switch (Choice)
             {
-            case 1: laundryPrice = 30 + multiplier; break;
-            case 2: laundryPrice = 40 + multiplier; break;
-            case 3: laundryPrice = 50 + multiplier; break;
-            case 4: laundryPrice = 50 + multiplier; break;
-            case 5: laundryPrice = 30 + multiplier; break;
-            case 6: laundryPrice = 50 + multiplier; break;
-            case 9: laundryPrice = 90 + multiplier; break;
+            case 1: laundryPrice = 30; break;
+            case 2: laundryPrice = 40; break;
+            case 3: laundryPrice = 50; break;
+            case 4: laundryPrice = 50; break;
+            case 5: laundryPrice = 30; break;
+            case 6: laundryPrice = 50; break;
+            case 9: laundryPrice = 90; break;
             }
+
+        if (Choice == 7 || Choice == 8)
+        {
+            cout << "Quantity: ";
+            cin >> pcs;
         }
-        hours = 3;
     }
+
     else if (laundryType == 'B' || laundryType == 'b')
     {
         cout << "=============== PREMIUM LAUNDRY ===============" << endl;
@@ -165,12 +124,12 @@ int main()
 
         if (powderOpt == 'A' || powderOpt == 'a') laundryPrice = 350;
         else if (powderOpt == 'B' || powderOpt == 'b') laundryPrice = 400;
+
         else
         {
             cout << "Invalid choice";
             return 0;
         }
-        hours = 2;
     }
 
      else
@@ -178,6 +137,7 @@ int main()
         cout << "Invalid laundry type";
         return 0;
     }
+
 
 cout << "=========================================" << endl;
 cout << "Here are the available powder detergents:" << endl;
@@ -393,7 +353,7 @@ cout << "============================" << endl;
 cout << "============================" << endl;
     cout << "Select Variants: ";
     cin >> championfabcon_variant;
-    }
+
 
     if (championfabcon_variant == '1' || '2' || '3' || '4')
     championfabconprice = 10;
@@ -401,6 +361,7 @@ cout << "============================" << endl;
     else {
     cout << "Invalid Input" << endl;
     return 0;
+    }
     }
 
 
@@ -424,10 +385,11 @@ cout << "============================" << endl;
     else if (Bleach_variant == '3')
         Bleachprice = 10;
 
-    else {
-    cout << " Invalid Input";
-    return 0;
-        }
+    else
+    {
+        cout << " Invalid Input";
+        return 0;
+    }
 
 
 
@@ -438,13 +400,14 @@ cout << "============================" << endl;
     cout << "1. Yes     2. No" << endl;
     cin >> addons;
 
-    if (addons == '1'){
-    cout << "Add-ons:" << endl;
-    cout << "1. Fabcon" << endl;
-    cout << "2. Powder" << endl;
-    cout << "3. Bleach" << endl;
-    cout << "Choose: ";
-    cin >> choice;
+    if (addons == 1)
+    {
+        cout << "Add-ons:" << endl;
+        cout << "1. Fabcon" << endl;
+        cout << "2. Powder" << endl;
+        cout << "3. Bleach" << endl;
+        cout << "Choose: ";
+        cin >> choice;
     }
 
     if (choice == 1)
@@ -472,12 +435,39 @@ cout << "============================" << endl;
     if (downyfabcon_variant == '1' || '2' || '3' || '4')
     downyfabconprice = 10;
 
-    else {
-    cout << "Invalid Input" << endl;
+    if (downyfabcon_variant == '1' ||
+        downyfabcon_variant == '2' ||
+        downyfabcon_variant == '3' ||
+        downyfabcon_variant == '4')
+
+        downyfabconprice = 10;
+
+    totalPrice = laundryPrice * kg + downyfabconprice;
+
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (downyfabconprice > 0) cout << "fabcon Price: " << downyfabconprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Enter Payment: ";
+    cin >> pay;
+
+    if (pay < totalPrice)
+    {
+    cout << "Insufficient Payment";
+    return 0;
+    }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
+
+    cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
     return 0;
     }
     }
-    }
+
 
 
     else if (fabcon == 'B' || fabcon == 'b') {
@@ -495,11 +485,41 @@ cout << "============================" << endl;
     if (surffabcon_variant == '1' || '2' || '3' || '4')
     surffabconprice = 10;
 
-    else {
-    cout << "Invalid Input" << endl;
+    if (surffabcon_variant == '1' ||
+        surffabcon_variant == '2' ||
+        surffabcon_variant == '3' ||
+        surffabcon_variant == '4')
+
+        surffabconprice = 10;
+
+    totalPrice = laundryPrice * kg + surffabconprice;
+
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (surffabconprice > 0) cout << "fabcon Price: " << surffabconprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Enter Payment: ";
+    cin >> pay;
+
+    if (pay < totalPrice)
+    {
+    cout << "Insufficient Payment";
     return 0;
     }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
+
+    cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
+    return 0;
     }
+
+
+
+
 
 
 
@@ -514,40 +534,42 @@ cout << "============================" << endl;
 cout << "============================" << endl;
     cout << "Select Variants: ";
     cin >> championfabcon_variant;
-    }
-
-     if (championfabcon_variant == '1' || '2' || '3' || '4')
-    championfabconprice = 10;
-
-            fabconPrice = 10;
 
 
+    if (championfabcon_variant == '1' ||
+        championfabcon_variant == '2' ||
+        championfabcon_variant == '3' ||
+        championfabcon_variant == '4')
 
+        championfabconprice = 10;
 
+    totalPrice = laundryPrice * kg + championfabconprice;
 
-     if (choice == 2)
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (championfabconprice > 0) cout << "fabcon Price: " << championfabconprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Enter Payment: ";
+    cin >> pay;
+
+    if (pay < totalPrice)
     {
-        cout << "=============== POWDER ===============" << endl;
-        cout << "A. Downy     (5 - 10)" << endl;
-        cout << "B. Surf      (5 - 10)" << endl;
-        cout << "C. Tide      (5 - 10)" << endl;
-        cout << "D. Champion  (5 - 10)" << endl;
-        cout << "E. Bleach     (8 - 9)" << endl;
-        cout << "Choose: ";
-        cin >> powderOpt;
-
-        switch (powderOpt)
-        {
-        case 'A': case 'a': powderPrice = 10; break;
-        case 'B': case 'b': powderPrice = 10; break;
-        case 'C': case 'c': powderPrice = 10; break;
-        case 'D': case 'd': powderPrice = 10; break;
-        case 'E': case 'e': powderPrice = 9; break;
-        default:
-            cout << "Powder not available";
-            return 0;
-        }
+    cout << "Insufficient Payment";
+    return 0;
     }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
+
+    cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
+    return 0;
+    }
+
+
+
 
         if (choice == 2)
         {
@@ -586,16 +608,41 @@ cout << "=========================================" << endl;
     else if (Downypowder_variant == '4')
         downypowderprice = 15;
 
-    else {
-    cout << " Invalid Input";
-    return 0;
-        }
-        }
-        }
+    if (Downypowder_variant == '1' ||
+        Downypowder_variant == '2' ||
+        Downypowder_variant == '3' ||
+        Downypowder_variant == '4')
 
+    totalPrice = laundryPrice * kg + downypowderprice;
 
-    else if (powders == 'B' || powders == 'b')
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (powderPrice > 0) cout << "Powder Price: " << downypowderprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Enter Payment: ";
+    cin >> pay;
+
+    if (pay < totalPrice)
     {
+    cout << "Insufficient Payment";
+    return 0;
+    }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
+
+    cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
+
+    return 0;
+    }
+    }
+
+
+
+    else if (powders == 'B' || powders == 'b'){
     cout << "========================================" << endl;
     cout << "        Surf Variants (powder)             " << endl;
     cout << "========================================" << endl;
@@ -619,78 +666,151 @@ cout << "=========================================" << endl;
     else if (Surfpowder_variant == '4')
         Surfpowderprice = 15;
 
-    else {
-    cout << " Invalid Input";
+    if (Surfpowder_variant == '1' ||
+        Surfpowder_variant == '2' ||
+        Surfpowder_variant == '3' ||
+        Surfpowder_variant == '4')
+
+    totalPrice = laundryPrice * kg + Surfpowderprice;
+
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (powderPrice > 0) cout << "Powder Price: " << Surfpowderprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Enter Payment: ";
+    cin >> pay;
+
+    if (pay < totalPrice)
+    {
+    cout << "Insufficient Payment";
     return 0;
-        }
-        }
+    }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
+
+    cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
+    return 0;
+    }
 
 
-    if (powders == 'C' || powders == 'c')
-    {
-        cout << "========================================" << endl;
-        cout << "         Tide Variants (powder)                 " << endl;
-        cout << "========================================" << endl;
-        cout << "1. Original Scent    = "; cout << "15  - pesos" << endl;
-        cout << "2. Lemon           = "; cout << "15 - pesos" << endl;
-        cout << "3. Ultra Plus = "; cout << "15  - pesos" << endl;
-        cout << "4. Antibac    = "; cout << "15 - pesos" << endl;
-        cout << "========================================" << endl;
-           cout << "Select variant:" << endl;
-           cin >> Tidepowder_variant;
+    if (powders == 'C' || powders == 'c'){
+    cout << "========================================" << endl;
+    cout << "         Tide Variants (powder)                 " << endl;
+    cout << "========================================" << endl;
+    cout << "1. Original Scent    = "; cout << "15  - pesos" << endl;
+    cout << "2. Lemon           = "; cout << "15 - pesos" << endl;
+    cout << "3. Ultra Plus = "; cout << "15  - pesos" << endl;
+    cout << "4. Antibac    = "; cout << "15 - pesos" << endl;
+    cout << "========================================" << endl;
+    cout << "Select variant:" << endl;
+    cin >> Tidepowder_variant;
     if (Tidepowder_variant == '1')
-        Tidepowderprice = 15;
+    Tidepowderprice = 15;
 
-        else if (Tidepowder_variant == '2')
-        Tidepowderprice = 15;
+    else if (Tidepowder_variant == '2')
+    Tidepowderprice = 15;
 
-        else if (Tidepowder_variant == '3')
-        Tidepowderprice = 15;
+    else if (Tidepowder_variant == '3')
+    Tidepowderprice = 15;
 
-        else if (Tidepowder_variant == '4')
-        Tidepowderprice = 15;
+    else if (Tidepowder_variant == '4')
+    Tidepowderprice = 15;
 
-        else {
-        cout << " Invalid Input";
-        return 0;
-        }
-        }
+    if (Tidepowder_variant == '1' ||
+        Tidepowder_variant == '2' ||
+        Tidepowder_variant == '3' ||
+        Tidepowder_variant == '4')
 
+    totalPrice = laundryPrice * kg + Tidepowderprice;
 
-    if (powders == 'D' || powders == 'd')
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (powderPrice > 0) cout << "Powder Price:     " << Tidepowderprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Enter Payment: ";
+    cin >> pay;
+
+    if (pay < totalPrice)
     {
-        cout << "========================================" << endl;
-        cout << "      Champion Variants (powder)                " << endl;
-        cout << "========================================" << endl;
-        cout << "1. Blue     = "; cout << "15  - pesos" << endl;
-        cout << "2. Citrus Fresh         = "; cout << "15 - pesos" << endl;
-        cout << "3. Anti-bacterial      = "; cout << "15  - pesos" << endl;
-        cout << "4. Premium Color Care            = "; cout << "15 - pesos" << endl;
-        cout << "========================================" << endl;
-           cout << "Select variant:" << endl;
-           cin >> Championpowder_variant;
-
-
-        if (Championpowder_variant == '1')
-        Championpowderprice = 15;
-
-        else if (Championpowder_variant == '2')
-        Championpowderprice = 15;
-
-        else if (Championpowder_variant == '3')
-        Championpowderprice = 15;
-
-        else if (Championpowder_variant == '4')
-        Championpowderprice = 15;
-
-        else {
-        cout << " Invalid Input";
+        cout << "Insufficient Payment";
         return 0;
-        }
-        }
+    }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
 
-        if (choice == 3){
-        cout << "========================================" << endl;
+    cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
+    return 0;
+    }
+
+
+
+    if (powders == 'D' || powders == 'd'){
+    cout << "========================================" << endl;
+    cout << "      Champion Variants (powder)                " << endl;
+    cout << "========================================" << endl;
+    cout << "1. Blue     = "; cout << "15  - pesos" << endl;
+    cout << "2. Citrus Fresh         = "; cout << "15 - pesos" << endl;
+    cout << "3. Anti-bacterial      = "; cout << "15  - pesos" << endl;
+    cout << "4. Premium Color Care            = "; cout << "15 - pesos" << endl;
+    cout << "========================================" << endl;
+    cout << "Select variant:" << endl;
+    cin >> Championpowder_variant;
+
+
+    if (Championpowder_variant == '1')
+    Championpowderprice = 15;
+
+    else if (Championpowder_variant == '2')
+    Championpowderprice = 15;
+
+    else if (Championpowder_variant == '3')
+    Championpowderprice = 15;
+
+    else if (Championpowder_variant == '4')
+    Championpowderprice = 15;
+
+    if (Championpowder_variant == '1' ||
+        Championpowder_variant == '2' ||
+        Championpowder_variant == '3' ||
+        Championpowder_variant == '4')
+
+    totalPrice = laundryPrice * kg + Championpowderprice;
+
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (powderPrice > 0) cout << "Powder Price: " << Championpowderprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
+
+    cout << "Enter Payment: ";
+    cin >> pay;
+
+    if (pay < totalPrice)
+    {
+    cout << "Insufficient Payment";
+    return 0;
+    }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
+
+    cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
+    return 0;
+    }
+
+
+
+    if (choice == 3){
+    cout << "========================================" << endl;
     cout << "                  Bleach                 " << endl;
     cout << "========================================" << endl;
     cout << "1. Zonrox              = "; cout << "10  - pesos" << endl;
@@ -710,28 +830,42 @@ cout << "=========================================" << endl;
     else if (Bleach_variant == '3')
         Bleachprice = 10;
 
-    else {
-    cout << " Invalid Input";
-    return 0;
-        }
-        }
+    if (Bleach_variant == '1' || Bleach_variant == '2' || Bleach_variant == '3')
 
+    totalPrice = laundryPrice * kg + Bleachprice;
 
+    cout << "================== BILLING ==================" << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
+    if (Bleachprice > 0) cout << "Bleach Price:     " << Bleachprice << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
+    cout << "Estimated Time:   " << hours << " hours" << endl;
+    cout << "---------------------------------------------" << endl;
 
+    cout << "Enter Payment: ";
+    cin >> pay;
 
+    if (pay < totalPrice)
+    {
+        cout << "Insufficient Payment";
+        return 0;
+    }
+    change = pay - totalPrice;
+    cout << "Change: " << format2(change) << endl;
 
-    else if (addons == 2){
     cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
     return 0;
     }
 
 
-    totalPrice = laundryPrice + powderPrice + fabconPrice;
+
+    if (addons == 2)
+
+
+    totalPrice = laundryPrice * kg;
 
     cout << "================== BILLING ==================" << endl;
-    cout << "Laundry Price:    " << format2(laundryPrice) << endl;
-    if (fabconPrice > 0) cout << "Fabcon Price:     " << format2(fabconPrice) << endl;
-    if (powderPrice > 0) cout << "Powder Price:     " << format2(powderPrice) << endl;
+    cout << "Laundry Price:    " << laundryPrice << endl;
     cout << "---------------------------------------------" << endl;
     cout << "TOTAL PRICE:      " << format2(totalPrice) << endl;
     cout << "Estimated Time:   " << hours << " hours" << endl;
@@ -751,9 +885,13 @@ cout << "=========================================" << endl;
     cout << "Thank you for using JAKOB'S WELL Laundry Services!" << endl;
 
     return 0;
-}
+    }
 
 
 
 
 
+
+
+
+   
